@@ -1,0 +1,6 @@
+USE PracticaTP;
+
+ALTER TABLE Proyecto ADD CONSTRAINT FOREIGN KEY (IdCliente) REFERENCES cliente (IdCliente);
+ALTER TABLE RendicionHs ADD CONSTRAINT FOREIGN KEY (Legajo) REFERENCES Empleado (Legajo);
+ALTER TABLE RendicionHs ADD CONSTRAINT FOREIGN KEY (IdProyecto) REFERENCES Proyecto (IdProyecto);
+ALTER TABLE RendicionHs ADD CONSTRAINT FOREIGN KEY (IdCliente) REFERENCES Proyecto (IdCliente);
