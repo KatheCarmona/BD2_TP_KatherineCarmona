@@ -22,5 +22,23 @@ Join cliente c on p.IdCliente = c.IdCliente
 where p.Descripcion = Proyecto;
 
   END IF;
+  
+  
+  
 END
+
+DELIMITER $$
+  CREATE PROCEDURE rendicion (IN cant int(4), IN l int(4), in Rol VARCHAR(100), IN Proyecto VARCHAR (100), IN Mes VARCHAR(100),IN Modelo CHAR (1), IN hs NUMERIC(5))
+  begin
+  declare leg int(4);
+  declare i int(4);
+  set leg=l;
+  set i=0;
+  while cant!=0
+  do
+  CALL RendicionDeHoras(leg, Rol, Proyecto, Mes, Modelo, hs);
+  set cant=cant-1;
+  set leg=leg+1;
+  end while;
+  end;
 $$

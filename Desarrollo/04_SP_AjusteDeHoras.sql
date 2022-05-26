@@ -17,4 +17,19 @@ BEGIN
 	WHERE l.Mes = Mes AND l.Rol = vrol;
     
 END;
+
+DELIMITER $$
+CREATE PROCEDURE ajusteDeHoras2 (IN cant int(4), in l int(4),IN Proyecto VARCHAR (100), IN Mes VARCHAR(100), IN ajuste numeric(5))
+BEGIN
+declare leg int(4);
+set leg=l;
+while cant!=0
+do
+CALL ajusteDeHoras (Proyecto, Mes, Leg,ajuste);
+set cant=cant-1;
+set leg=leg+1;
+end while;
+    
+END;
+drop procedure ajusteDeHoras2;
 $$
