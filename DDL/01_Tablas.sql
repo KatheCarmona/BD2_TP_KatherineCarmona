@@ -29,6 +29,10 @@ Mes VARCHAR (100),
 Horas NUMERIC (6)
 );
 
+Alter table liquidacionMensual drop column IdLiquidacion;
+Alter table liquidacionMensual add column id int(6);
+update liquidacionMensual set id=0;
+
 CREATE TABLE RendicionHs (
     Legajo CHAR(4),
     Rol VARCHAR(100),
@@ -41,3 +45,10 @@ CREATE TABLE RendicionHs (
     HsSem NUMERIC(4),
     HsDia NUMERIC(3)
 );
+
+create table numerador(
+id int (6),
+tabla varchar(200),
+siguiente int (6)
+);
+drop table numerador;

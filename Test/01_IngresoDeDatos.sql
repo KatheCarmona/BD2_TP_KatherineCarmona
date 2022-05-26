@@ -17,3 +17,8 @@ CALL insertarEmpleados ('DO02', "Bruno Borac","DevOps");
 /*-------------------TABLA PROYECTO------------------------------------------*/
 CALL insertarProyectos('TTA','TT', "Sistema Avion");
 CALL insertarProyectos('FLW','FLT', "Facilita Web");
+CALL insertarProyectos('FLM','FLT', "Proyecto 1");
+CALL insertarProyectos('FLC','FLT', "Proyecto 2");
+
+CALL insertarPY(3, 'FLT');
+CALL insertarParticipantes(500);
